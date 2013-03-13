@@ -35,7 +35,7 @@
 
 + (YFStockDetailsLoader *)loaderWithDelegate:(id<YFStockDetailsLoaderDelegate>)delegate;
 - (id)initWithDelegate:(id<YFStockDetailsLoaderDelegate>)delegate;
-- (void)loadDetails:(NSString *)stockSymbol;
+- (void)loadDetails:(NSString *)stockSymbols;//comma separated list of stock symbols
 - (void)cancel;
 
 @end

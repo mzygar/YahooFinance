@@ -2,6 +2,12 @@
 
 The YahooFinance framework is an iOS Objective-C framework for Yahoo Finance.
 
+
+## Changes in my fork
+- updated project settings to fix building issues (iOS 6.1, Xcode 4.6)
+- changed loader to handle multiple quotes at once (returning NSMutableArray). YFStockDetailsLoader takes now a single symbol, or a comma-separated list
+	
+
 ## Features
 
 - Search for stock symbols from major global stock exchanges [list](http://finance.yahoo.com/exchanges)
