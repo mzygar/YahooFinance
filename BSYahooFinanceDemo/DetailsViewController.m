@@ -39,8 +39,9 @@
 #pragma mark - YFStockDetailsLoader delegate methods
 
 - (void)stockDetailsDidLoad:(YFStockDetailsLoader *)aDetailsLoader
-{    
-    self.detailKeys = [aDetailsLoader.stockDetails.detailsDictionary allKeys];
+{
+    YFStockDetails* details=[aDetailsLoader.stockDetails objectAtIndex:0];
+    self.detailKeys = [details.detailsDictionary allKeys];
     [self.stockDetails reloadData];
 }
 
@@ -90,7 +91,8 @@
     }
     else if ([self.detailKeys count] > 0) {
         cell.textLabel.textColor = [UIColor blackColor];
-        NSString *str = [self.detailsLoader.stockDetails.detailsDictionary objectForKey:[self.detailKeys objectAtIndex:indexPath.row]];
+        YFStockDetails* details=[self.detailsLoader.stockDetails objectAtIndex:0];
+        NSString *str = [details.detailsDictionary objectForKey:[self.detailKeys objectAtIndex:indexPath.row]];
         if (![[NSNull null] isEqual:str]) {
             cell.detailTextLabel.text = str;             
         }
